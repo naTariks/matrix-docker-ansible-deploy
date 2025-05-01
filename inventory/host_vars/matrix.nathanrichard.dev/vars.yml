@@ -21,7 +21,7 @@ matrix_homeserver_implementation: synapse
 
 # A secret used as a base, for generating various other secrets.
 # You can put any string here, but generating a strong one is preferred. You can create one with a command like `pwgen -s 64 1`.
-matrix_homeserver_generic_secret_key: 'GENERIC_SECRET_KEY'
+matrix_homeserver_generic_secret_key: '<GENERIC_SECRET_KEY>'
 
 # By default, the playbook manages its own Traefik (https://doc.traefik.io/traefik/) reverse-proxy server.
 # It will retrieve SSL certificates for you on-demand and forward requests to all other components.
@@ -51,7 +51,7 @@ devture_systemd_docker_base_ipv6_enabled: true
 #
 # Changing this value subsequently requires manual work.
 # The value used here must be shorter than 100 characters.
-postgres_connection_password: 'POSTGRES_CONNECTION_PASSWORD'
+postgres_connection_password: '<POSTGRES_CONNECTION_PASSWORD>'
 
 # By default, we configure coturn's external IP address using the value specified for `ansible_host` in your `inventory/hosts` file.
 # If this value is an external IP address, you can skip this section.
