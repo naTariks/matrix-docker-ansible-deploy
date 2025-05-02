@@ -143,3 +143,17 @@ matrix_element_call_enabled: true
 matrix_synapse_admin_enabled: true
 matrix_synapse_enable_registration: true
 matrix_synapse_registration_requires_token: true
+
+# config for maturix bridges
+matrix_admin: @admin:nathanrichard.dev
+
+matrix_bridges_encryption_enabled: true
+matrix_bridges_encryption_default: true
+
+matrix_appservice_double_puppet_enabled: true
+
+# signal bridge
+matrix_mautrix_signal_enabled: true
+
+# whatsapp bridge
+matrix_mautrix_whatsapp_enabled: true
