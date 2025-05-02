@@ -132,6 +132,7 @@ matrix_playbook_docker_installation_enabled: false
 
 # Element Client
 matrix_client_element_default_theme: 'dark'
+matrix_client_element_themes_enabled: true
 
 # Enable the Element Call frontend UI to allow standalone use of Element Call.
 # Enabling this also auto-enables the Matrix RTC stack.
