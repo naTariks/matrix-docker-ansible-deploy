@@ -158,3 +158,7 @@ matrix_mautrix_signal_enabled: true
 
 # whatsapp bridge
 matrix_mautrix_whatsapp_enabled: true
+
+# go federate
+matrix_server_fqn_matrix_federation: "federation.{{ matrix_domain }}"
+matrix_federation_public_port: 8448
