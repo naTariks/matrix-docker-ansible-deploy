@@ -69,8 +69,7 @@ matrix_playbook_public_matrix_federation_api_traefik_entrypoint_config_http3_ena
 # this may need to be reconfigured. See the comments above.
 matrix_playbook_public_matrix_federation_api_traefik_entrypoint_config_custom:
   forwardedHeaders:
-    insecure: true
-  # trustedIPs: ['IP-ADDRESS-OF-YOUR-REVERSE-PROXY']
+    trustedIPs: ['IP-ADDRESS-OF-MY-REVERSE-PROXY']
 
 # Controls whether container networks will be created with IPv6 support.
 #
@@ -137,6 +136,7 @@ matrix_client_element_themes_enabled: true
 # Enable the Element Call frontend UI to allow standalone use of Element Call.
 # Enabling this also auto-enables the Matrix RTC stack.
 matrix_element_call_enabled: true
+matrix_element_call_hostname: "call.{{ matrix_domain }}"
 
 # install synapse-admin
 # allows oversight of users, generation of such and access tokens
@@ -145,8 +145,8 @@ matrix_synapse_admin_enabled: true
 matrix_synapse_enable_registration: true
 matrix_synapse_registration_requires_token: true
 
-# config for maturix bridges
-matrix_admin: "@admin:nathanrichard.dev"
+# config for mautrix bridges
+matrix_admin: "@admin:{{ matrix_domain }}"
 
 matrix_bridges_encryption_enabled: true
 matrix_bridges_encryption_default: true
@@ -159,6 +159,8 @@ matrix_mautrix_signal_enabled: true
 # whatsapp bridge
 matrix_mautrix_whatsapp_enabled: true
 
-# go federate
-matrix_server_fqn_matrix_federation: "federation.{{ matrix_domain }}"
-matrix_federation_public_port: 8448
+# open to federation
+matrix_synapse_federation_enabled: true
+matrix_synapse_http_listener_resource_name: ["client", "federation"]
+matrix_federation_public_port: 8443
+matrix_synapse_tls_federation_listener_enabled: false
